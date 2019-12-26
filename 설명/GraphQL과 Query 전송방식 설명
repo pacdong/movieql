@@ -1,0 +1,46 @@
+앱 시작시
+/feed/
+/notifications/
+/user/1
+
+GraphQl은 하나의 REST를 구성하기 위해 여러 Fetching을 하나의 Query에 담아서 보낼 수 있다.
+
+GraphQL Language
+  query {
+    feed {
+      comments
+      likeNumber
+    }
+    notifications {
+      isRead
+    }
+    user {
+      username
+      profilePic
+    }
+  }
+
+JavaScript Language
+  {
+    feed: [
+      {
+        comments: 1,
+        likeNumber: 20
+      }
+    ],
+    notifications: [
+      {
+        isRead: true
+      },
+      {
+        isRead: false
+      }
+    ],
+    user: {
+      username: "nice"
+      profile: "http"
+    }
+  }
+
+  GraphQL은 내가 요청한 것만 정확하게 JavaScript Object로 보내준다.
+  내가 원하는 방식으로 조정할 수 있다. 모양을 바꾸거나 여러가지를 섞을 수도 있다.
